@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Spotify for the Record</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" class="content-bg">
+  <ion-spinner name="circular" *ngIf="loading" class="spinner"></ion-spinner>
+
+  <ion-list *ngIf="!loading" class="news-list">
+    <ion-item *ngFor="let item of news" class="news-item">
+      <ion-label>
+        <h2>{{ item.title.rendered }}</h2>
+        <p [innerHTML]="removeReadMore(item.excerpt.rendered)"></p>
+        <a target="_blank" *ngIf="item.link" [href]="item.link" class="read-more">Leer más</a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+

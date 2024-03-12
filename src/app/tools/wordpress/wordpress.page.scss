@@ -1,0 +1,35 @@
+.content-bg {
+  --background: #000;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.news-item {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  color: #fff;
+}
+
+.news-item h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.news-item p {
+  font-size: 16px;
+}
+
+.read-more {
+  color: #fff;
+  text-decoration: underline;
+}

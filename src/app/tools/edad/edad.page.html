@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>edad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" class="ion-padding">
+
+  <div class="container">
+
+    <ion-item>
+      <ion-input label="Ingrese Tu nombre"
+                 [(ngModel)]="name"
+                 placeholder="Juan"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="getAge()"
+                disabled="{{!name}}"
+                style="margin-bottom: 20px; margin-top: 20px;">
+      Adivinar Edad
+    </ion-button>
+
+
+    <ion-item *ngIf="age">
+      <p>La edad de {{name}} es: {{age}}</p>
+    </ion-item>
+  </div>
+
+
+</ion-content>
+

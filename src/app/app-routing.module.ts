@@ -3,17 +3,32 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'info',
+    loadChildren: () => import('./tools/info/info.module').then( m => m.InfoPageModule)
   },
   {
-    path: 'message/:id',
-    loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
+    path: 'edad',
+    loadChildren: () => import('./tools/edad/edad.module').then( m => m.EdadPageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'genero',
+    loadChildren: () => import('./tools/genero/genero.module').then( m => m.GeneroPageModule)
+  },
+  {
+    path: 'clima',
+    loadChildren: () => import('./tools/clima/clima.module').then( m => m.ClimaPageModule)
+  },
+  {
+    path: 'universidades',
+    loadChildren: () => import('./tools/universidades/universidades.module').then( m => m.UniversidadesPageModule)
+  },
+  {
+    path: 'wordpress',
+    loadChildren: () => import('./tools/wordpress/wordpress.module').then( m => m.WordpressPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'info'
   },
 ];
 

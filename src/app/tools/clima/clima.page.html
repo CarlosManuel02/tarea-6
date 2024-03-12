@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card *ngIf="weatherData">
+    <ion-card-header>
+      <ion-card-title>Información del Clima</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Hora:</strong> {{ weatherData.hourly.time[0] |  date: 'shortTime'}}</p>
+      <p><strong>Temperatura (°C):</strong> {{ weatherData.hourly.temperature_2m[0] }}</p>
+      <p><strong>Sensación Térmica (°C):</strong> {{ weatherData.hourly.apparent_temperature[0] }}</p>
+      <p><strong>Probabilidad de Precipitación (%):</strong> {{ weatherData.hourly.precipitation_probability[0] }}</p>
+      <p><strong>Lluvia (mm):</strong> {{ weatherData.hourly.rain[0] }}</p>
+      <p><strong>Código del Tiempo:</strong> {{ weatherData.hourly.weather_code[0] }}</p>
+      <p><strong>Presión Superficial (hPa):</strong> {{ weatherData.hourly.surface_pressure[0] }}</p>
+      <p><strong>Cobertura de Nubes (%):</strong> {{ weatherData.hourly.cloud_cover[0] }}</p>
+      <p><strong>Visibilidad (km):</strong> {{ weatherData.hourly.visibility[0] }}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
